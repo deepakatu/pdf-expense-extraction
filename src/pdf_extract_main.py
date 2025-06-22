@@ -55,8 +55,8 @@ def statementAmt(Extract):                          # Function for finding State
 
 def activeReportsCleanup(Extract, page):                # This cleans up specific ActiveReports files, removes header/footer
     global PDFName
-    if "02-0192-0115055-02" in Extract:                 # Remove bank acc details
-        Extract = Extract.replace("02-0192-0115055-02","")
+    if "02-" in Extract:                 # Remove bank acc details
+        Extract = Extract.replace("02-","")
     if page == 0:
         try:
             Extract = Extract.split("Property Address Amount")[1]
